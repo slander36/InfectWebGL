@@ -1,0 +1,96 @@
+<html>
+	<head>
+		<title>Infect! The Plague Game</title>
+		<!-- jQuery -->
+		<script src='js/jquery/jquery-1.9.1.js' type='text/javascript'></script>
+		<!-- Twitter Bootstrap -->
+		<link href='css/bootstrap.css' rel='stylesheet' type='text/css' />
+		<link href='css/bootstrap-responsive.css' rel='stylesheet' type='text/css' />
+		<script src='js/bootstrap/bootstrap.js' type='text/javascript'></script>
+		<!-- Libraries for WebGL -->
+		<script src='js/sylvester/sylvester.src.js' type='text/javascript'></script>
+		<!-- Infect Code -->
+		<!-- Stylesheet -->
+		<link href='css/infect.css' rel='stylesheet' type='text/css' />
+		<!-- Shaders -->
+		<!-- Uncomment this when put on server. Requires web server if using src
+		<script id="shader-fs" src="shaders/shader-fs" type="x-shader/x-fragment"></script>
+		<script id="shader-vs" src="shaders/shader-vs" type="x-shader/x-vertext"></script>
+		-->
+		<!-- -->
+		<script id="shader-fs" type="x-shader/x-fragment">
+			void main(void) {
+				gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+			}
+		</script>
+		<script id="shader-vs" type="x-shader/x-vertex">
+			attribute vec3 aVertexPosition;
+
+			uniform mat4 uMVMatrix;
+			uniform mat4 uPMatrix;
+
+			void main(void) {
+				gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+			}
+		</script>
+		<!-- -->
+		<!-- Javascript -->
+		<script src='js/infect/infect.js' type='text/javascript'></script>
+		<script src='js/infect/util.js' type='text/javascript'></script>
+	</head>
+	<body>
+		<div class='navbar'>
+			<div class='navbar-inner'>
+				<a class='brand' href='index.html'>Infect! The Plague Game</a>
+				<ul class='nav'>
+					<li><a href='#'>High Scores</a></li>
+					<li><a href='#'>Join us on Twitter</a></li>
+				<ul>
+			</div>
+		</div>
+		<div class='container-fluid'>
+			<div class='row-fluid'>
+				<div class='span2'>
+					Stuff goes here<br/>
+					Think scrolling scores
+				</div>
+				<div class='span10'>
+					<div class='row-fluid'>
+						<div class='span6 offset2'>
+							<div class='title'>
+								<div>Infect!</div>
+								<div>The Plague Game</div>
+							</div>
+						</div>
+					</div>
+					<div class='row-fluid'>
+						<div class='span4'>
+							<div class='instructions'>
+								<h3>How to Play</h3>
+								<p>
+									<b>Controls:</b>
+									<ul>
+										<li>W - move forward</li>
+										<li>A - rotate 90 degrees left</li>
+										<li>D - rotate 90 degrees right</li>
+										<li>S - rotate 180 degrees</li>
+									</ul>
+								</p>
+								<p>
+									<b>Goal:</b>
+									<ul>
+										<li>Infect the entire town before the time runs out</li>
+										<li>Beware the rat catcher! You're not a cat, you only have one life!</li>
+										<li>Upload your high score, arcade style, to compete against friends and the world!</li>
+									</ul>
+								</p>
+							</div>
+						</div>
+						<div class='span6'>
+							<canvas id='infectgame' width="640" height="480"></canvas>
+						</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
