@@ -88,6 +88,9 @@ ig.initShaders = function() {
 
 	ig.vertexPositionAttribute = gl.getAttribLocation(ig.shaderProgram, "aVertexPosition");
 	gl.enableVertexAttribArray(ig.vertexPositionAttribute);
+
+	ig.vertexColorAttribute = gl.getAttribLocation(ig.shaderProgram, "aVertexColor");
+	gl.enableVertexAttribArray(ig.vertexColorAttribute);
 }
 
 ig.getShader = function(gl, id) {
@@ -135,29 +138,51 @@ ig.getShader = function(gl, id) {
 
 ig.initBuffers = function() {
 	ig.squareVerticesBuffer = gl.createBuffer();
-	gl.bindBuffer(gl.ARRAY_BUFFER, ig.squareVerticesBuffer);
-
 	var vertices = [
 	1.0, 1.0, 0.0,
 	-1.0, 1.0, 0.0,
 	1.0, -1.0, 0.0,
 	-1.0, -1.0, 0.0
 	];
-
+	gl.bindBuffer(gl.ARRAY_BUFFER, ig.squareVerticesBuffer);
 	gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+
+	ig.squareVerticesColorBuffer = gl.createBuffer();
+	var colors = [
+	1.0, 1.0, 1.0, 1.0, // white
+	1.0, 0.0, 0.0, 1.0, // red
+	0.0, 1.0, 0.0, 1.0, // green
+	0.0, 0.0, 1.0, 1.0  // blue
+	];
+	gl.bindBuffer(gl.ARRAY_BUFFER, ig.squareVerticesColorBuffer);
+	gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colors), gl.STATIC_DRAW);
+
 }
 
 ig.drawScene = function() {
 	gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
+	// Set the perspecitve. ig.makePerspective can be found in util.js
 	ig.perspectiveMatrix = ig.makePerspective(45.0, ig.sizes.vaspect, 0.1, 100.0);
 
+	// Load the Identity Matrix. ig.loadIdentity can be found in util.js
 	ig.loadIdentity();
+
+	// And translate it back by 6 along the z axis. ig.mvTranslate can be found in util.js
 	ig.mvTranslate([0.0, 0.0, -6.0]);
 
+	// Make the Position Matrix and apply it
 	gl.bindBuffer(gl.ARRAY_BUFFER, ig.squareVerticesBuffer);
 	gl.vertexAttribPointer(ig.vertexPositionAttribute, 3, gl.FLOAT, false, 0, 0);
+
+	// Make the Color Matrix and apply it
+	gl.bindBuffer(gl.ARRAY_BUFFER, ig.squareVerticesColorBuffer);
+	gl.vertexAttribPointer(ig.vertexColorAttribute, 4, gl.FLOAT, false, 0, 0);
+
+	//  Uniformize the matrices before drawing them
 	ig.setMatrixUniforms();
+
+	// Draw the matrices using TRIANGLE_STRIP
 	gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 }
 
