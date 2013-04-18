@@ -1,4 +1,4 @@
-/*
+/******
 
 Infect! util.js
 
@@ -13,7 +13,7 @@ https://developer.mozilla.org/en-US/docs/WebGL
 And
 glUtils.js (available on the web in a lot of places)
 
-*/
+******/
 
 // augment Sylvester some
 Matrix.Translation = function (v)
@@ -102,14 +102,17 @@ Vector.prototype.flatten = function ()
 Back to ig - InfectGame - namespace
 */
 
+// Set the Model View matrix to the Identity matrix 4x4
 ig.loadIdentity = function() {
 	ig.mvMatrix = Matrix.I(4);
 }
 
+// Multiply matrix 'm' to current model view matrix
 ig.multMatrix = function(m) {
 	ig.mvMatrix = ig.mvMatrix.x(m);
 }
 
+// Translate the Model View matrix by vector 'v'
 ig.mvTranslate = function(v) {
 	ig.multMatrix(Matrix.Translation($V([v[0], v[1], v[2]])).ensure4x4());
 }
