@@ -186,8 +186,8 @@
 						"selection":
 						[
 							[
-								212,
-								212
+								384,
+								384
 							]
 						],
 						"settings":
@@ -378,7 +378,7 @@
 		"width": 0.0
 	},
 	"show_minimap": true,
-	"show_open_files": false,
+	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 150.0,
