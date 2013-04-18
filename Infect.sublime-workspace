@@ -20,7 +20,7 @@
 	"buffers":
 	[
 		{
-			"file": "/C/Users/sl7v6/Documents/GitHub/InfectWebGL/index.html",
+			"file": "index.html",
 			"settings":
 			{
 				"buffer_size": 3143,
@@ -28,7 +28,7 @@
 			}
 		},
 		{
-			"file": "infect.js",
+			"file": "js/infect/infect.js",
 			"settings":
 			{
 				"buffer_size": 5047,
@@ -36,7 +36,7 @@
 			}
 		},
 		{
-			"file": "util.js",
+			"file": "js/infect/util.js",
 			"settings":
 			{
 				"buffer_size": 5952,
@@ -45,7 +45,7 @@
 			}
 		},
 		{
-			"file": "/C/Users/sl7v6/Documents/GitHub/InfectWebGL/shaders/shader-fs",
+			"file": "shaders/shader-fs",
 			"settings":
 			{
 				"buffer_size": 70,
@@ -54,7 +54,7 @@
 			}
 		},
 		{
-			"file": "/C/Users/sl7v6/Documents/GitHub/InfectWebGL/shaders/shader-vs",
+			"file": "shaders/shader-vs",
 			"settings":
 			{
 				"buffer_size": 246,
@@ -63,7 +63,7 @@
 			}
 		},
 		{
-			"file": "/C/Users/sl7v6/Documents/GitHub/InfectWebGL/css/infect.css",
+			"file": "css/infect.css",
 			"settings":
 			{
 				"buffer_size": 470,
@@ -95,6 +95,7 @@
 	},
 	"file_history":
 	[
+		"/C/Users/sl7v6/Documents/GitHub/InfectWebGL/js/infect/Infect.sublime-project",
 		"/C/Users/sl7v6/Documents/GitHub/WebOBJ/README.md",
 		"/C/Users/sl7v6/Documents/GitHub/InfectWebGL/js/infect/loadObjs/loadObj.js",
 		"/C/Users/sl7v6/Documents/GitHub/InfectWebGL/js/infect/loadObj.js",
@@ -149,7 +150,7 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/C/Users/sl7v6/Documents/GitHub/InfectWebGL/index.html",
+					"file": "index.html",
 					"settings":
 					{
 						"buffer_size": 3143,
@@ -176,7 +177,7 @@
 				},
 				{
 					"buffer": 1,
-					"file": "infect.js",
+					"file": "js/infect/infect.js",
 					"settings":
 					{
 						"buffer_size": 5047,
@@ -186,8 +187,8 @@
 						"selection":
 						[
 							[
-								384,
-								384
+								234,
+								234
 							]
 						],
 						"settings":
@@ -209,7 +210,7 @@
 			[
 				{
 					"buffer": 2,
-					"file": "util.js",
+					"file": "js/infect/util.js",
 					"settings":
 					{
 						"buffer_size": 5952,
@@ -226,7 +227,9 @@
 						"settings":
 						{
 							"auto_name": "/*",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 135.0,
@@ -236,7 +239,7 @@
 				},
 				{
 					"buffer": 3,
-					"file": "/C/Users/sl7v6/Documents/GitHub/InfectWebGL/shaders/shader-fs",
+					"file": "shaders/shader-fs",
 					"settings":
 					{
 						"buffer_size": 70,
@@ -263,7 +266,7 @@
 				},
 				{
 					"buffer": 4,
-					"file": "/C/Users/sl7v6/Documents/GitHub/InfectWebGL/shaders/shader-vs",
+					"file": "shaders/shader-vs",
 					"settings":
 					{
 						"buffer_size": 246,
@@ -290,7 +293,7 @@
 				},
 				{
 					"buffer": 5,
-					"file": "/C/Users/sl7v6/Documents/GitHub/InfectWebGL/css/infect.css",
+					"file": "css/infect.css",
 					"settings":
 					{
 						"buffer_size": 470,
