@@ -1,3 +1,5 @@
 # Gitignore for Infect! Game
 
 zips/
+
+.DS_Store
